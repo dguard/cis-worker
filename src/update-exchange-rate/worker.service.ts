@@ -52,8 +52,8 @@ export class WorkerService {
     });
   }
 
-  protected static UPDATE_EXCHANGE_RATE_PERIOD_STARTS = '09:00';
-  protected static UPDATE_EXCHANGE_RATE_PERIOD_ENDS = '24:00';
+  protected static UPDATE_EXCHANGE_RATE_PERIOD_STARTS_AT_IN_MOSCOW_TIMEZONE = '09:00';
+  protected static UPDATE_EXCHANGE_RATE_PERIOD_ENDS_AT_IN_MOSCOW_TIMEZONE = '24:00';
 
   protected update_exchange_rate_period = UPDATE_EXCHANGE_RATE_PERIOD_EVERY_5_MINUTES;
   protected last_updated_at;
@@ -137,10 +137,11 @@ export class WorkerService {
 
   private updateExchangeRate() {
     return new Promise((resolve, reject) => {
-      const startTime = new Date();
-      const { startTimeHours, startTimeMinutes, endTimeHours, endTimeMinutes } = this.getCurrentUpdatePeriod(startTime);
+      const startTimeLocal = new Date();
 
-      const lastUpdatedAt = new Date(startTime);
+      const { startTimeHours, startTimeMinutes, endTimeHours, endTimeMinutes } = this.getCurrentUpdatePeriod(startTimeLocal);
+
+      const lastUpdatedAt = new Date(startTimeLocal);
       lastUpdatedAt.setHours(startTimeHours);
       lastUpdatedAt.setMinutes(startTimeMinutes);
       lastUpdatedAt.setSeconds(0);
@@ -152,8 +153,11 @@ export class WorkerService {
         return resolve({});
       }
 
-      const startTimeGreaterPeriodStarts = Number(startTimeHours) >= Number(WorkerService.UPDATE_EXCHANGE_RATE_PERIOD_STARTS.split(':')[0]);
-      const startTimeLessPeriodEnds = Number(endTimeHours) <= Number(WorkerService.UPDATE_EXCHANGE_RATE_PERIOD_ENDS.split(':')[0]);
+      const startTimeMoscowTimezone = new Date(startTimeLocal.toLocaleString("en-US", {timeZone: "Europe/Moscow"}));
+      const periodMoscowTimezone = this.getCurrentUpdatePeriod(startTimeMoscowTimezone);
+
+      const startTimeGreaterPeriodStarts = Number(periodMoscowTimezone['startTimeHours']) >= Number(WorkerService.UPDATE_EXCHANGE_RATE_PERIOD_STARTS_AT_IN_MOSCOW_TIMEZONE.split(':')[0]);
+      const startTimeLessPeriodEnds = Number(periodMoscowTimezone['endTimeHours']) <= Number(WorkerService.UPDATE_EXCHANGE_RATE_PERIOD_ENDS_AT_IN_MOSCOW_TIMEZONE.split(':')[0]);
 
       if(startTimeGreaterPeriodStarts && startTimeLessPeriodEnds) {
         // keep
