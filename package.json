@@ -1,8 +1,10 @@
 {
-  "name": "nest-typescript-starter",
-  "version": "1.0.0",
-  "description": "Nest TypeScript starter repository",
+  "name": "cis-worker",
+  "version": "0.0.2",
+  "description": "Nest Console worker repository",
   "license": "MIT",
+  "author": "Alexander Serditov",
+  "repository": "https://github.com/dguard/cis-worker",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",

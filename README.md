@@ -25,39 +25,35 @@
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
 ## Description
-
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+
+###\>CIS
+
+[API](https://github.com/dguard/cis-api)
+
+[Frontend](https://github.com/dguard/cis-front)
+
+\>Worker
+
+###CIS Websocket
+
+[Websocket API](https://github.com/dguard/cis-websocket-api)
+
+[Websocket Worker](https://github.com/dguard/cis-websocket-worker)
+
+[Consumer](https://github.com/dguard/cis-consumer-websocket)
 
 ## Installation
 
 ```bash
-$ npm install
+$ yarn
 ```
 
 ## Running the app
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+# console
+$ yarn run console
 ```
 
 ## Support
@@ -69,6 +65,9 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 - Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
 - Website - [https://nestjs.com](https://nestjs.com/)
 - Twitter - [@nestframework](https://twitter.com/nestframework)
+
+
+- Contributor: [Alexander Serditov](https://cv.digitallyconstructed.ru/)
 
 ## License
 
