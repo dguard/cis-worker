@@ -1,4 +1,5 @@
 import { Logger } from 'winston';
+import { ConfigService } from '@nestjs/config';
 
 import * as chalk from 'chalk';
 import { Inject, Injectable } from '@nestjs/common';
@@ -16,6 +17,7 @@ export class WorkerService {
 
   constructor(
     @Inject(WINSTON_MODULE_PROVIDER) private readonly logger: Logger,
+    private readonly config: ConfigService,
   ) {
   }
 
@@ -188,7 +190,7 @@ export class WorkerService {
 
         return Promise.resolve(res);
       }).then((res) => {
-        const dumpFileName = `${process.env.ROOT_DIR}/tmp/exchangeRate.json`;
+        const dumpFileName = `${this.config.get<number>('ROOT_DIR')}/tmp/exchangeRate.json`;
 
         this.logger.debug(
           `[workerService] write into file`,

@@ -1,8 +1,6 @@
 import { BootstrapConsole } from 'nestjs-console';
 import { UpdateExchangeRateModule } from './update-exchange-rate';
 
-require('dotenv').config();
-
 process.on('unhandledRejection', (err) => {
   throw err;
 });

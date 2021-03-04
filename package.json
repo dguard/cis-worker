@@ -6,7 +6,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
-    "console": "ts-node -r tsconfig-paths/register src/console.ts keep-updated-exchange-rate",
+    "console": "nodemon",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
@@ -22,6 +22,7 @@
   "dependencies": {
     "@nestjs/bull": "0.3.1",
     "@nestjs/common": "7.6.5",
+    "@nestjs/config": "^0.6.3",
     "@nestjs/core": "7.6.5",
     "@nestjs/microservices": "^7.6.7",
     "@nestjs/platform-express": "7.6.5",
@@ -39,6 +40,7 @@
     "moment": "^2.29.1",
     "nest-winston": "^1.4.0",
     "nestjs-console": "^4.0.0",
+    "nodemon": "^2.0.7",
     "reflect-metadata": "0.1.13",
     "rimraf": "3.0.2",
     "rxjs": "6.6.3",
