@@ -37,13 +37,13 @@
 
 \>Worker
 
-### CIS Websocket
+### CIS Webhook
 
-[Websocket API](https://github.com/dguard/cis-websocket-api)
+[Webhook API](https://github.com/dguard/cis-webhook-api)
 
-[Websocket Worker](https://github.com/dguard/cis-websocket-worker)
+[Webhook Worker](https://github.com/dguard/cis-webhook-worker)
 
-[Consumer](https://github.com/dguard/cis-consumer-websocket)
+[Consumer Webhook](https://github.com/dguard/cis-consumer-webhook)
 
 ## Installation
 
