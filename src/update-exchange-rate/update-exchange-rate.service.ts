@@ -3,8 +3,6 @@ import { Console, Command } from 'nestjs-console';
 import { WINSTON_MODULE_PROVIDER } from 'nest-winston';
 import { Logger } from 'winston';
 
-// import * as chalk from 'chalk';
-// import * as cluster from 'cluster';
 import { WorkerService } from './worker.service';
 
 @Console()
