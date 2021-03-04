@@ -27,6 +27,8 @@
 ## Description
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+[DEMO](https://cis.digitallyconstructed.ru/) (live update functionality)
+
 ### \>CIS
 
 [API](https://github.com/dguard/cis-api)
