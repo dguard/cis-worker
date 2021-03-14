@@ -29,21 +29,19 @@
 
 [DEMO](https://cis.digitallyconstructed.ru/) (live update functionality)
 
-### \>CIS
 
-[API](https://github.com/dguard/cis-api)
+| Service | Repo |
+| --- | --- |
+| API 📦 | [cis-api](https://github.com/dguard/cis-api) |
+| Frontend 📦 | [cis-front](https://github.com/dguard/cis-front) |
+| Worker 🐍| cis-worker (you are inside) |
+|  📦 |  |
+| Webhook API 🐍| [cis-webhook-api](https://github.com/dguard/cis-webhook-api) |
+| Webhook Worker 🐍| [cis-webhook-worker](https://github.com/dguard/cis-webhook-worker) |
+| Consumer Webhook 🐍| [cis-consumer-webhook](https://github.com/dguard/cis-consumer-webhook) |
+|  📦 |  |
+| Graphql API 🐍| [cis-graphql-api](https://github.com/dguard/cis-graphql-api) |
 
-[Frontend](https://github.com/dguard/cis-front)
-
-\>Worker
-
-### CIS Webhook
-
-[Webhook API](https://github.com/dguard/cis-webhook-api)
-
-[Webhook Worker](https://github.com/dguard/cis-webhook-worker)
-
-[Consumer Webhook](https://github.com/dguard/cis-consumer-webhook)
 
 ## Installation
 
